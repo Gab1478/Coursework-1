@@ -1,10 +1,9 @@
 # BROKEN ON PURPOSE.
 # Run it, read the last line, then fix it.
 
-limit = 20
-value = int(input("Value: "))
+import pandas as pd
 
-if value > limit:
-    print("OVER")
-else:
-    print("OK")
+df = pd.DataFrame({"value": ["87", "120", "45"], "limit": [100, 100, 100]})
+
+df["percent"] = (df["value"] / df["limit"]) * 100
+print (df)
